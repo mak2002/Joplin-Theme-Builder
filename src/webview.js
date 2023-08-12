@@ -2,6 +2,7 @@ console.log("script is running");
 const cssProperties = {};
 const userCssProperties = {};
 
+// add suffix like px, !important
 function formatPropertyValue(property, value, important=true) {
   const propertyUnits = {
     width: "px",
@@ -14,6 +15,7 @@ function formatPropertyValue(property, value, important=true) {
   return important ? `${formattedValue} !important` : formattedValue;
 }
 
+// converts CSS object to string that will be written in theme file
 function objectToCssString(cssObject) {
   let cssString = "";
   console.log("cssObject", cssObject);
@@ -44,20 +46,14 @@ inputs.forEach((input) => {
     const propertyName = this.dataset.cssproperty;
     const propertyValue = this.value;
 
-    // if (this.class && this.class.includes("inputThemeBuilderUser")) {
-    //   console.log("this>>", this);
-    // }
-
+    // create css property within the object if it doesn't already exist
     if (!cssProperties[componentName]) {
       cssProperties[componentName] = {};
     }
 
-    console.log('propertyName', propertyName)
     cssProperties[componentName][propertyName] = propertyValue;
 
     const cssString = objectToCssString(cssProperties);
-
-    console.log("cssString", cssString);
 
     webviewApi.postMessage({
       name: "setTheme",
