@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <h2>Theme Builder</h2>
+      <hr />
+
+      <div class="inputs-container">
+        <div class="component" data-component="sidebar">
+          <label for="color1">Sidebar</label>
+          <input
+            type="color"
+            class="inputThemeBuilder"
+            data-cssProperty="background-color"
+            id="sidebar"
+          />
+        </div>
+
+        <div class="component" data-component="item-list">
+          <label for="item-list">Notes List</label>
+          <input
+            type="color"
+            class="inputThemeBuilder"
+            data-cssProperty="background-color"
+            id="item-list"
+          />
+        </div>
+
+        <div class="component" data-component="cm-header">
+          <label for="headings">Heading</label>
+          <input
+            type="color"
+            data-cssProperty="color"
+            id="headings"
+            class="inputThemeBuilder"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

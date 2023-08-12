@@ -1,0 +1,14 @@
+{
+	"manifest_version": 1,
+	"id": "theme.builder.joplin.plugin",
+	"app_min_version": "2.11",
+	"version": "1.0.0",
+	"name": "Theme Builder",
+	"description": "",
+	"author": "",
+	"homepage_url": "",
+	"repository_url": "",
+	"keywords": [],
+	"categories": [],
+	"screenshots": []
+}
