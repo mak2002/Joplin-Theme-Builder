@@ -10,7 +10,7 @@ joplin.plugins.register({
 
     const installDir = await joplin.plugins.installationDir();
     const HTML = installDir + "/webview.html";
-    const themeCSS = installDir + "/theme.css";
+    const themeCSS = installDir + '/cssFiles' + "/theme.css";
  
     await joplin.window.loadChromeCssFile(themeCSS);
     const panels = joplin.views.panels;
@@ -28,7 +28,6 @@ joplin.plugins.register({
       console.log(message);
 
       if (message.name === "setTheme") {
-        const themeCSS = installDir + "/theme.css";
         // const userCSS = installDir + 'user.css';
 
         await fs.writeFile(themeCSS, message.themeCSS);
@@ -39,10 +38,6 @@ joplin.plugins.register({
       }
     });
 
-    await joplin.views.toolbarButtons.create(
-      "toggleToc",
-      "toggleToc",
-      ToolbarButtonLocation.NoteToolbar
-    );
+    
   },
 });
